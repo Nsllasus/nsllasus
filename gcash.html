@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copy to Clipboard</title>
+</head>
+<body>
+    <p>GCash Number: <span id="gcash-number">09558070435</span></p>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function copyToClipboard() {
+            var text = document.getElementById("gcash-number").innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                alert('GCash number copied to clipboard!');
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
